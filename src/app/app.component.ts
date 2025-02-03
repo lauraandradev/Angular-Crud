@@ -2,21 +2,19 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { HelloComponent } from './hello.component';
-import { OwnerInsertComponent } from "./owner-insert.component";
-import { OwnerListComponent } from './owner-list.component';
 import { PanelModule } from 'primeng/panel';
-import { OwnerCrudComponent } from './owner-crud.component';
+import { ItemCrudComponent } from './components/item-crud.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, HelloComponent, OwnerCrudComponent, PanelModule],
+  imports: [RouterOutlet, FormsModule, HelloComponent, ItemCrudComponent, PanelModule, ],
   template: `
     <main class="main">
       <div class="content">
         <div class="left-side">
-          <app-hello helloName="DEV"></app-hello>
+          <app-hello helloName="usuário"></app-hello>
 
-          <owner-crud> </owner-crud>
+          <item-crud> </item-crud>
         </div>  
       </div>
     </main>
