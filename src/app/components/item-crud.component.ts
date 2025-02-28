@@ -30,7 +30,7 @@ export class ItemCrudComponent {
   isEdit: boolean = false;
   displayDialog: boolean = false;
 
-  addItem() {
+  async addItem() {
     if (this.isEdit) {
       const index = this.items.findIndex(i => i.id === this.item.id);
       this.items[index] = { ...this.item };

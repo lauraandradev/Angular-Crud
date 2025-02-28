@@ -23,19 +23,19 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
   <button pButton icon="pi pi-plus" label="Novo Pedido" (click)="displayDialog = true"></button>
 
   <p-dialog [(visible)]="displayDialog" header="Gerenciar Item">
-      <div>
+      <div class="flex flex-col gap-2">
           <label>Nome:</label>
           <input pInputText [(ngModel)]="item.nome">
       </div>
-      <div>
+      <div class="flex flex-col gap-2">
           <label>Preço:</label>
           <input pInputText type="text" [(ngModel)]="item.preco">
       </div>
-      <div>
+      <div class="flex flex-col gap-2">
           <label>Quantidade</label>
           <input pInputText type="number" [(ngModel)]="item.quantidade">
       </div>
-      <div>
+      <div class="flex flex-col gap-2">
           <label>Confirmação</label>
           <p-togglebutton 
             disabled="false" 
@@ -60,7 +60,7 @@ export class ItemInsertComponent {
   @Input() item: Item = { id: 0, nome: '', preco: 0, quantidade: 0, ativo: false };
   @Input() displayDialog: boolean = false;
 
-  @Output() addOutEvent = new EventEmitter();
+  @Output() addOutEvent = new EventEmitter(true);
 
   addItem() {
     this.addOutEvent.emit();
